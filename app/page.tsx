@@ -105,7 +105,11 @@ export default function Home() {
     total: todos.length,
     completed: todos.filter((todo) => todo.completed).length,
     active: todos.filter((todo) => !todo.completed).length,
-    overdue: todos.filter((todo) => !todo.completed && new Date(todo.dueDate) < new Date() && todo.dueDate).length,
+    overdue: todos.filter((todo) => 
+      !todo.completed && 
+      new Date(todo.dueDate) < new Date() && 
+      todo.dueDate
+    ).length,
   }
 
   return (
